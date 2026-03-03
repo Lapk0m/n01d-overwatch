@@ -5,7 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Shared/Themes/N01DTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/N01D.Shared;component/Themes/N01DTheme.xaml"/>
                 <ResourceDictionary Source="Themes/XChatTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
