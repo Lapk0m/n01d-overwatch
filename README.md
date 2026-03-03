@@ -11,9 +11,9 @@
 ```
 
 Real-time Middle East and Global Conflict Intelligence Dashboard.
-OSINT aggregation, flight tracking, maritime awareness, war ops monitoring, missile defense mapping, equipment order of battle, warzone radio streams, and eclipse warfare analysis.
+OSINT aggregation, flight tracking, maritime awareness, war ops monitoring, missile defense mapping, equipment order of battle, warzone radio streams, eclipse warfare analysis, satellite thermal detection, and war economy market impact tracking.
 
-**No API keys required.** Uses publicly available OSINT feeds and the OpenSky Network.
+**No API keys required.** Uses publicly available OSINT feeds, the OpenSky Network, and NASA FIRMS satellite data.
 
 ---
 
@@ -21,7 +21,7 @@ OSINT aggregation, flight tracking, maritime awareness, war ops monitoring, miss
 
 A Windows desktop intelligence dashboard that aggregates open-source intelligence (OSINT) from dozens of real-time sources into a single unified command interface. Built for researchers, analysts, journalists, and anyone tracking geopolitical events in conflict zones.
 
-Think of it as a personal situation awareness terminal — pulling live data from RSS feeds, flight trackers, ship transponders, missile site databases, equipment deployments, warzone press radio streams, and war operations monitoring — all rendered on an interactive dark-themed map with XChat IRC aesthetics.
+Think of it as a personal situation awareness terminal — pulling live data from RSS feeds, flight trackers, ship transponders, missile site databases, equipment deployments, warzone press radio streams, war operations monitoring, NASA satellite thermal hotspots, and conflict-driven market intelligence — all rendered on an interactive dark-themed map with XChat IRC aesthetics.
 
 ---
 
@@ -37,7 +37,11 @@ Think of it as a personal situation awareness terminal — pulling live data fro
 - **Warzone Radio** — Live press radio streams from conflict zones and CENTCOM briefings
 - **Eclipse Warfare** — 11 events (2025-2028) with military significance analysis
 - **Maritime Awareness** — AIS ship tracking in Strait of Hormuz, Red Sea, Persian Gulf
+- **Ground Tracking** — NASA FIRMS VIIRS satellite thermal hotspots auto-refreshed every 10 minutes across the Middle East conflict zone
+- **War Economy / Market Impacts** — 9 market sectors tracked: Energy, Defense, Commodities, Currencies, Shipping, Cybersecurity, Reconstruction, Insurance, Crypto. Commodity prices, defense stock watchlist, sanctions tracker, and trade feed aggregator
+- **Equipment Intel Scanner** — 12 defense RSS feeds (Defense News, Janes, The War Zone, Breaking Defense, Naval News, etc.) scanned for procurement, delivery, and deployment keywords
 - **Live Tracking** — 30-second auto-polling with real-time LIVE status indicator
+- **Auto-Refresh Pipeline** — RSS/OSINT (configurable), Ships/Flights/WarOps (5 min), NASA FIRMS thermal (10 min), Equipment Intel RSS (every refresh cycle)
 
 ### War Ops — 4-Category Threat Monitor
 
@@ -49,14 +53,14 @@ Think of it as a personal situation awareness terminal — pulling live data fro
 ### Interactive Tactical Map
 
 - Leaflet.js rendered via WebView2 with dark CartoDB tiles
-- Layer control — toggle events, flights, military bases, missile sites, air defense, equipment deployments, eclipse paths, heatmap
+- Layer control — toggle events, flights, military bases, missile sites, air defense, equipment deployments, eclipse paths, ground flock tracking, market impact zones, heatmap
 - Rich popups with severity-colored markers and event details
 - JS-to-C# message bridge for real-time updates
 - Heatmap overlay showing conflict density
 
-### Equipment Order of Battle
+### Equipment Order of Battle + Intel Feed
 
-8 regional forces tracked with full equipment databases:
+8 regional forces tracked with full equipment databases, plus a live intel feed scanning 12 defense industry RSS sources for new procurement, delivery, and deployment news:
 
 - **Iran** — F-14A, Su-35S, Shahed-136, Fateh sub, Karrar MBT, and more
 - **Israel** — F-35I Adir, F-15I Ra'am, Hermes 900, Harop, Merkava IV, Iron Dome
@@ -81,6 +85,25 @@ Live press and field radio accessible from the dashboard:
 - 12 missile sites — IRGC underground facilities, Houthi launch sites, Hezbollah arsenals, IRGCN coastal positions
 - 12 air defense sites — Iron Dome, Arrow-2, Arrow-3, David's Sling, THAAD, S-300, Bavar-373, Patriot, S-400, Khordad-15
 - Range rings and threat assessment on the map
+
+### War Economy and Market Impact Tracking
+
+Conflict-driven investment intelligence across 9 market sectors:
+
+- **Impacts** — 15+ tracked market impacts with severity, direction, and affected assets
+- **Commodities** — Brent crude, WTI, natural gas, gold, wheat, uranium, shipping rates, and more with conflict-adjusted pricing
+- **Defense Stocks** — Watchlist of defense contractors (Lockheed Martin, RTX, Northrop Grumman, BAE, General Dynamics, L3Harris, etc.) with conflict catalysts
+- **Alerts** — Market-moving conflict events with trade implications
+- **Sanctions** — Active sanctions tracking with economic impact assessment
+- **Trade Feeds** — 12 financial/defense trade news sources
+- **Map Integration** — Market impact zones rendered on the tactical map with severity-colored circles
+
+### Ground Tracking — NASA FIRMS Satellite Thermal
+
+- VIIRS SNPP satellite data auto-refreshed every 10 minutes
+- Thermal hotspot detection across the Middle East conflict zone (25-55E, 30-40N)
+- Ground flock tracking with scan timestamps
+- Merged into tactical map as a toggleable layer
 
 ### Eclipse Warfare Analysis
 
@@ -134,8 +157,10 @@ n01d-overwatch/
   Services/
     AlertService.cs              — Configurable alert engine
     EclipseService.cs            — Eclipse event tracking (2025-2028)
-    EquipmentDatabaseService.cs  — Military OOB for 8 forces
+    EquipmentDatabaseService.cs  — Military OOB for 8 forces + 12 RSS intel feeds
     FlightTrackingService.cs     — OpenSky + 160 callsign patterns
+    GroundTrackingService.cs     — NASA FIRMS satellite thermal hotspots
+    MarketImpactService.cs       — War economy / 9-sector market tracking
     MissileDefenseService.cs     — 24 missile/defense site database
     RssFeedService.cs            — 48+ RSS feed aggregator
     ShipTrackingService.cs       — Maritime vessel tracking
@@ -166,6 +191,7 @@ n01d-overwatch/
    RssFeed --- FlightTracking --- WarOps Monitor
    MissileDefense --- Eclipse --- Alert Engine
    ShipTracking --- Equipment OOB --- Radio Streams
+   GroundTracking --- MarketImpact --- Equipment Intel
                               |
              Keyword Classifier + Geo-Location (70+) + Severity Engine
                               |
